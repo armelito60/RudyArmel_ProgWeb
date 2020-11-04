@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import net.javaguides.springboot.springsecurity.model.Role;
 import net.javaguides.springboot.springsecurity.model.User;
-import net.javaguides.springboot.springsecurity.repository.UserRepository;
 import net.javaguides.springboot.springsecurity.web.dto.UserRegistrationDto;
 
 @Service
