@@ -1,75 +1,101 @@
 <!DOCTYPE html>
+<html lang="en">
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
-
-    <title>Registration</title>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+    >
+    <title>MeetCome</title>
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="bg-dark">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span> <span
-                    class="icon-bar"></span> <span class="icon-bar"></span> <span
-                    class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#" th:href="@{/}">Registration and
-                Login Module</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
-            </ul>
+        <div class="row">
+            <nav class="col navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://image.freepik.com/icones-gratuites/simple-calendrier_318-9776.jpg" width="40" height="30" alt="Info Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarContent" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
     </div>
-</nav>
-
-<br>
-<br>
+</div>
 <div class="container">
-    <div class="jumbotron">
-        <h1>Bienvenue sur Meeting Reservation</h1>
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron">
+                <h1>Bienvenue sur MeetCome !</h1>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-12 col-lg-4">
-            <div class="card">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://image.flaticon.com/icons/png/512/115/115902.png" alt="rdv">
                 <div class="card-body">
-                    <h5 class="card-title">Devenez diplômé</h5>
-                    <p class="card-text">De zéro à héros, obtenez un diplôme en informatique.</p>
+                    <h5 class="card-title">Rendez-vous</h5>
+                    <p class="card-text">Programmez un rendez-vous avec quelqu'un.</p>
+                    <a href="#" class="btn btn-primary">Go</a>
                 </div>
             </div>
         </div>
         <div class="col-12 col-lg-4">
-            <div class="card">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://image.flaticon.com/icons/png/512/125/125805.png" alt="rdv">
                 <div class="card-body">
-                    <h5 class="card-title">Formateurs de qualités</h5>
-                    <p class="card-text">Tous nos cours sont réalisés par les meilleurs informaticiens.</p>
+                    <h5 class="card-title">Lieu</h5>
+                    <p class="card-text">Trouvez un lieu pour le rendez-vous.</p>
+                    <a href="#" class="btn btn-primary">Go</a>
                 </div>
             </div>
         </div>
         <div class="col-12 col-lg-4">
-            <div class="card">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://image.flaticon.com/icons/png/512/95/95375.png" alt="rdv">
                 <div class="card-body">
-                    <h5 class="card-title">Un travail graranti</h5>
-                    <p class="card-text">Nous vous garantissons un emploi à l'issue de votre formation.</p>
+                    <h5 class="card-title">Vote</h5>
+                    <p class="card-text">Voter pour déterminer le lieu et l'endroit du rendez-vous.</p>
+                    <a href="#" class="btn btn-primary">Go</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item"><a href="#">À propos</a></li>
+                    <li class="list-inline-item">&middot;</li>
+                    <li class="list-inline-item"><a href="#">Vie privée</a></li>
+                    <li class="list-inline-item">&middot;</li>
+                    <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
+                </ul>
+            </div>
         </div>
-
+    </div>
 </div>
 
-<script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
-<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
-
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
-
 </html>
