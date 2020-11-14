@@ -12,6 +12,7 @@ public class User {
     private Long id;
 
     private String firstName;
+    private String pseudo;
     private String lastName;
     private String email;
     private String password;
@@ -27,18 +28,20 @@ public class User {
 
     public User() {}
 
-    public User(String firstName, String lastName, String email, String password) {
+    public User(String firstName, String lastName, String email, String password,String pseudo) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.pseudo = pseudo;
     }
 
-    public User(String firstName, String lastName, String email, String password, Collection < Role > roles) {
+    public User(String firstName, String lastName, String email, String password,String pseudo, Collection < Role > roles) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.pseudo = pseudo;
         this.roles = roles;
     }
 
@@ -82,6 +85,12 @@ public class User {
         this.password = password;
     }
 
+    public String getPseudo() {return pseudo;}
+
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
+    }
+
     public Collection < Role > getRoles() {
         return roles;
     }
@@ -98,6 +107,7 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + "*********" + '\'' +
+                ", pseudo='" + pseudo + '\'' +
                 ", roles=" + roles +
                 '}';
     }
