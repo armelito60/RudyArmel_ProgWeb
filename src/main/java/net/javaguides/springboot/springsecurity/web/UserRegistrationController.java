@@ -44,6 +44,14 @@ public class UserRegistrationController {
         if (result.hasErrors()) {
             return "registration";
         }
+        existing = userService.findByPseudo(userDto.getPseudo());
+        if (existing != null) {
+            result.rejectValue("pseudo", null, "There is already an account registered with that pseudo");
+        }
+
+        if (result.hasErrors()) {
+            return "registration";
+        }
 
         userService.save(userDto);
         return "redirect:/registration?success";

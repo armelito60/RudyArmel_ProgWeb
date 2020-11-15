@@ -8,4 +8,5 @@ import net.javaguides.springboot.springsecurity.model.User;
 @Repository
 public interface UserRepository extends JpaRepository < User, Long > {
     User findByEmail(String email);
+    User findByPseudo(String pseudo);
 }
