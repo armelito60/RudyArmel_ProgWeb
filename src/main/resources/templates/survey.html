@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+    >
+    <title>MeetCome</title>
+</head>
+
+<body>
+<div class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <nav class="col navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://image.freepik.com/icones-gratuites/simple-calendrier_318-9776.jpg" width="50" height="50" alt="Info Logo" />
+                    Sondage
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Accueil</a>
+                        </li>
+                        <li class="mr-auto p-2" sec:authorize="isAuthenticated()">
+                            <a th:href="@{/logout}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://image.flaticon.com/icons/png/512/129/129840.png" alt="rdv">
+                <div class="card-body">
+                    <h5 class="card-title">Utilisateurs</h5>
+                    <p class="card-text">Choisir l'/les utilisateur(s) avec qui tu veux un rendez-vous.</p>
+                    <a class="btn btn-primary" href="/" th:href="@{/survey}">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://image.flaticon.com/icons/png/512/125/125805.png" alt="rdv">
+                <div class="card-body">
+                    <h5 class="card-title">Lieu</h5>
+                    <p class="card-text">Choisissez le lieu du rendez-vous.</p>
+                    <a class="btn btn-primary" href="/" th:href="@{/survey}">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://image.flaticon.com/icons/png/512/105/105207.png" alt="rdv">
+                <div class="card-body">
+                    <h5 class="card-title">Horaires</h5>
+                    <p class="card-text">Choisissez la date du rendez-vous</p>
+                    <a class="btn btn-primary" href="/" th:href="@{/survey}">Go</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
