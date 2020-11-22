@@ -2,6 +2,7 @@ package net.javaguides.springboot.springsecurity.service;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import net.javaguides.springboot.springsecurity.repository.UserRepository;
@@ -35,6 +36,11 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByPseudo(pseudo);
     }
 
+    @Override
+    public List<User> getAllByPseudo() {
+        return userRepository.findAllOrderByPseudoNotNull();
+    }
+
     public User save(UserRegistrationDto registration) {
         User user = new User();
         user.setFirstName(registration.getFirstName());
@@ -45,6 +51,7 @@ public class UserServiceImpl implements UserService {
         user.setRoles(Arrays.asList(new Role("ROLE_USER")));
         return userRepository.save(user);
     }
+
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email);
