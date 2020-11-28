@@ -24,9 +24,6 @@
                 <a class="navbar-brand">
                     <img src="https://image.freepik.com/icones-gratuites/simple-calendrier_318-9776.jpg" width="40" height="30" alt="Info Logo" />
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div id="navbarContent" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
