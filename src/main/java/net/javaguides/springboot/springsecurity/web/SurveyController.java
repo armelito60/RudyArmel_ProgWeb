@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SurveyController {
 
     @GetMapping("/survey")
-    public String survey() {
-        return "survey";
-    }
+    public String survey() { return "survey"; }
+    @GetMapping("/pageUser")
+    public String pageUser() { return "pageUser"; }
 
 }

@@ -5,8 +5,16 @@ import org.springframework.stereotype.Repository;
 
 import net.javaguides.springboot.springsecurity.model.User;
 
+import java.util.ArrayList;
+
 @Repository
 public interface UserRepository extends JpaRepository < User, Long > {
     User findByEmail(String email);
     User findByPseudo(String pseudo);
+
+
+
+
+
 }
+

@@ -2,6 +2,7 @@ package net.javaguides.springboot.springsecurity.web;
 
 import javax.validation.Valid;
 
+import net.javaguides.springboot.springsecurity.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,12 +16,21 @@ import net.javaguides.springboot.springsecurity.model.User;
 import net.javaguides.springboot.springsecurity.service.UserService;
 import net.javaguides.springboot.springsecurity.web.dto.UserRegistrationDto;
 
+import java.sql.PseudoColumnUsage;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 @Controller
 @RequestMapping("/registration")
 public class UserRegistrationController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @ModelAttribute("user")
     public UserRegistrationDto userRegistrationDto() {
@@ -54,6 +64,27 @@ public class UserRegistrationController {
         }
 
         userService.save(userDto);
+        filtrePseudo();
         return "redirect:/registration?success";
+    }
+
+    public List<String> filtrePseudo(){
+
+        List<User> listUser = userRepository.findAll();
+        List<String> listPseudo = new ArrayList<>();
+        for (User user: listUser) {
+            listPseudo.add(user.getPseudo().toLowerCase());
+
+        }
+        Collections.sort(listPseudo);
+        for (String pseudo:listPseudo) {
+            System.out.println(pseudo);
+
+        }
+
+        return listPseudo;
+        var jqxhr = $.get( "example.php", function() {
+            alert( "success" );
+        })
     }
 }
