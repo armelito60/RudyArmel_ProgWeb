@@ -46,10 +46,29 @@
                 <option th:each="pseudolist : ${pseudo}"
                         th:text="${pseudolist}">
                 </option>
+    
             </select>
-        </label>
-        <p><input type="submit" value="Submit"></p>
+
+            <div>
+            <label for="start"><h1>Choisissez une date !</h1></label>
+
+            <input type="date" id="start" name="trip-start"
+                   value="2020-11-30"
+                   min="2020-11-30" max="2021-12-31">
+            </div>
+
+            <div>
+            <h2>Choisissez un lieu !</h2>
+
+            <form th:action="@{/event}" th:object="${event}" method="post">
+                <input type="text" name ="texte">
+
+
+            </div>
     </form>
+        <p><input type="submit" value="Submit"></p>
+
+
     </div>
 </div>
 </body>
