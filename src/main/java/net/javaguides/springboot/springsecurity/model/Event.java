@@ -1,7 +1,6 @@
 package net.javaguides.springboot.springsecurity.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -11,16 +10,16 @@ import java.util.Date;
 public class Event {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Date date;
+    private String date;
     private String participant;
     private String lieu;
 
     public Event() {}
 
-    public Event(Date date, String participant, String lieu) {
+    public Event(String date, String participant, String lieu) {
         this.date = date;
         this.participant = participant;
         this.lieu = lieu;
@@ -30,7 +29,7 @@ public class Event {
         return id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -46,9 +45,7 @@ public class Event {
         this.id = id;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+    public void setDate(String date) { this.date = date; }
 
     public void setParticipant(String participant) {
         this.participant = participant;
@@ -56,5 +53,15 @@ public class Event {
 
     public void setLieu(String lieu) {
         this.lieu = lieu;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", date='" + date + '\'' +
+                ", participant='" + participant + '\'' +
+                ", lieu='" + lieu + '\'' +
+                '}';
     }
 }

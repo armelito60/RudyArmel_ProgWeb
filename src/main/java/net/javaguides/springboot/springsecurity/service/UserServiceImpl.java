@@ -2,9 +2,12 @@ package net.javaguides.springboot.springsecurity.service;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import net.javaguides.springboot.springsecurity.model.Event;
+import net.javaguides.springboot.springsecurity.repository.EventRepository;
 import net.javaguides.springboot.springsecurity.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -23,6 +26,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private EventRepository eventRepository;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
@@ -50,6 +56,10 @@ public class UserServiceImpl implements UserService {
         user.setPseudo(registration.getPseudo());
         user.setRoles(Arrays.asList(new Role("ROLE_USER")));
         return userRepository.save(user);
+    }
+
+    public Event saveUserParticipant(Event event) {
+        return eventRepository.save(event);
     }
 
     @Override

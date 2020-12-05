@@ -38,18 +38,38 @@
 </div>
 <div class="container">
     <div class="row">
-    <form th:action="@{/survey}" th:object="${pseudo}" method="post">
-    <p>Choisissez un utilisateur</p>
-        <label>
-            <select name="pseudo" multiple>
-                <option value=""> -- </option>
-                <option th:each="pseudolist : ${pseudo}"
-                        th:text="${pseudolist}">
-                </option>
-            </select>
-        </label>
-        <p><input type="submit" value="Submit"></p>
-    </form>
+        <form th:action="@{/survey}" th:object="${event}" method="post">
+            <div class="form-group">
+                <label for="participant" class="control-label">Choisissez un utilisateur</label>
+                    <select class="form-control" id="participant" th:field="*{participant}" multiple="multiple">
+                        <option th:each="pseudolist : ${pseudo}"
+                                th:value="${pseudolist}"
+                                th:text="${pseudolist}"></option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date" class="control-label">Choisissez une date !</label>
+
+                <input type="date" id="date"
+                       value="2020-11-30"
+                       min="2020-11-30"
+                       max="2021-12-31"
+                       th:field="*{date}">
+            </div>
+
+            <div class="form-group">
+                <label for="lieu" class="control-label">Choisissez un lieu !</label>
+                <input type="text"
+                       id="lieu"
+                       th:field="*{lieu}">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Ajouter</button>
+            </div>
+        </form>
+
     </div>
 </div>
 </body>
