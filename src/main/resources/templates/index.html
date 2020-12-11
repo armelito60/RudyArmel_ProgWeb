@@ -53,6 +53,22 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 col-lg-4">
+        <table id="eventList">
+            <thead>
+            <tr>
+                <th>Evenement</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="event : ${eventList}">
+                <td th:text="${eventList}"></td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
 </div>
 <div class="bg-light">
     <div class="container">

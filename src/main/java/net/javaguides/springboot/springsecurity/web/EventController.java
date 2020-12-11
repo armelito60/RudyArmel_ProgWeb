@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -19,6 +20,7 @@ public class EventController {
 
     @Autowired
     private UserService eventService;
+
 
     @GetMapping
     public String stepOneSurvey(Model model) {
@@ -47,6 +49,25 @@ public class EventController {
     public String eventCreated(@ModelAttribute("event") @Valid Event event) {
         eventService.saveUserParticipant(event);
         System.out.println(event.toString());
+        return "index";
+    }
+    @GetMapping
+    public String eventParticipant(Model model, Principal principal) {
+        List<Event> eventParticipantList = eventService.getEventParticipant(principal.getName());
+        List<String> eventList = new ArrayList<>();
+
+        for (Event event : eventParticipantList) {
+            eventList.add(event.toString());
+        }
+        if(eventList.size()==0){
+            eventList.add("Pas d'évènements à venir");
+            model.addAttribute("eventList", eventList);
+
+        }
+        else {
+            model.addAttribute("eventList", eventList);
+        }
+
         return "index";
     }
 }

@@ -20,4 +20,6 @@ public interface UserService extends UserDetailsService {
 
     List<User> getAllByPseudo();
 
+    List<Event> getEventParticipant(String pseudo);
+
 }

@@ -78,4 +78,9 @@ public class UserServiceImpl implements UserService {
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toList());
     }
+    public List<Event> getEventParticipant(String pseudo) {
+
+        return eventRepository.findAllByParticipantContaining(pseudo);
+    }
+
 }
