@@ -12,17 +12,18 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String date;
     private String participant;
     private String lieu;
+    private String creator;
 
     public Event() {}
 
-    public Event(String date, String participant, String lieu) {
+    public Event(String date, String participant, String lieu, String creator) {
         this.date = date;
         this.participant = participant;
         this.lieu = lieu;
+        this.creator = creator;
     }
 
     public Long getId() {
@@ -41,6 +42,8 @@ public class Event {
         return lieu;
     }
 
+    public String getCreator() { return creator; }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -55,6 +58,8 @@ public class Event {
         this.lieu = lieu;
     }
 
+    public void setCreator(String creator) { this.creator = creator; }
+
     @Override
     public String toString() {
         return "Event{" +
@@ -62,6 +67,7 @@ public class Event {
                 ", date='" + date + '\'' +
                 ", participant='" + participant + '\'' +
                 ", lieu='" + lieu + '\'' +
+                ", createur='" + creator + '\'' +
                 '}';
     }
 }

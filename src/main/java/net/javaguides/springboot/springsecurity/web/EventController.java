@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -44,7 +45,8 @@ public class EventController {
     }
 
     @PostMapping
-    public String eventCreated(@ModelAttribute("event") @Valid Event event) {
+    public String eventCreated(@ModelAttribute("event") @Valid Event event, Principal principal) {
+        event.setCreator(principal.getName());
         eventService.saveUserParticipant(event);
         System.out.println(event.toString());
         return "index";
