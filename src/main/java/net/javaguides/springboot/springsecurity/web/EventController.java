@@ -46,7 +46,8 @@ public class EventController {
     }
 
     @PostMapping
-    public String eventCreated(@ModelAttribute("event") @Valid Event event) {
+    public String eventCreated(@ModelAttribute("event") @Valid Event event, Principal principal) {
+        event.setCreator(principal.getName());
         eventService.saveUserParticipant(event);
         System.out.println(event.toString());
         return "index";
