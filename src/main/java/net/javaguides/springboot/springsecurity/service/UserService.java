@@ -18,7 +18,7 @@ public interface UserService extends UserDetailsService {
 
     Event saveUserParticipant(Event event);
 
-    List<User> getAllByPseudo();
+    List<User> getAllByEmail();
 
     List<Event> getEventParticipant(String pseudo);
 
