@@ -21,22 +21,21 @@ public class EventController {
     @Autowired
     private UserService eventService;
 
-
     @GetMapping
     public String stepOneSurvey(Model model) {
 
-        List<User> userList = eventService.getAllByPseudo();
-        List<String> pseudoList = new ArrayList<>();
+        List<User> userList = eventService.getAllByEmail();
+        List<String> emailList = new ArrayList<>();
 
         for (User user: userList) {
-            pseudoList.add(user.getPseudo());
+            emailList.add(user.getEmail());
         }
 
-        Collections.sort(pseudoList);
-        System.out.println(pseudoList);
+        Collections.sort(emailList);
+        System.out.println(emailList);
         System.out.println(userList);
 
-        model.addAttribute("pseudo", pseudoList);
+        model.addAttribute("email", emailList);
         return "survey";
     }
 
@@ -50,25 +49,6 @@ public class EventController {
         event.setCreator(principal.getName());
         eventService.saveUserParticipant(event);
         System.out.println(event.toString());
-        return "index";
-    }
-    @GetMapping
-    public String eventParticipant(Model model, Principal principal) {
-        List<Event> eventParticipantList = eventService.getEventParticipant(principal.getName());
-        List<String> eventList = new ArrayList<>();
-
-        for (Event event : eventParticipantList) {
-            eventList.add(event.toString());
-        }
-        if(eventList.size()==0){
-            eventList.add("Pas d'évènements à venir");
-            model.addAttribute("eventList", eventList);
-
-        }
-        else {
-            model.addAttribute("eventList", eventList);
-        }
-
-        return "index";
+        return "confirmedEvent";
     }
 }

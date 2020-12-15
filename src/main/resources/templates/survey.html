@@ -42,9 +42,9 @@
             <div class="form-group">
                 <label for="participant" class="control-label">Choisissez un utilisateur</label>
                     <select class="form-control" id="participant" th:field="*{participant}" multiple="multiple">
-                        <option th:each="pseudolist : ${pseudo}"
-                                th:value="${pseudolist}"
-                                th:text="${pseudolist}"></option>
+                        <option th:each="emaillist : ${email}"
+                                th:value="${emaillist}"
+                                th:text="${emaillist}"></option>
                     </select>
             </div>
 
@@ -66,7 +66,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-success">Ajouter</button>
+                <button type="submit" class="btn btn-success" href="/" th:href="@{/confirmedEvent}">Ajouter</button>
             </div>
         </form>
 

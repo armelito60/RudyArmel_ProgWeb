@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-lg-4">
+        <div class="col-9 col-lg-4">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="https://image.flaticon.com/icons/png/512/115/115902.png" alt="rdv">
                 <div class="card-body">
@@ -52,21 +52,36 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-lg-4">
-        <table id="eventList">
-            <thead>
-            <tr>
-                <th>Evenement</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="event : ${eventList}">
-                <td th:text="${eventList}"></td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="col-9 col-lg-4">
+            <table id="eventList">
+                <thead>
+                <tr>
+                    <th>Evenement</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="event : ${eventList}">
+                    <td th:text="${eventList}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-9 col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://img.icons8.com/carbon-copy/2x/filled-trash.png" alt="rdv">
+                <div class="card-body">
+                    <form th:action="@{/confirmedEvent}" th:object="${event}" method="post">
+                        <div class="form-group">
+                        <label for="event"></label>
+                        <select class="form-control" id="event" multiple="multiple">
+                            <option th:each="eventList : ${eventList}"
+                                    th:value="${eventList}"
+                                    th:text="${eventList}"></option>
+                        </select>
+                        <a class="btn btn-primary"  href="/" th:href="@{/deletedEvent}">Supprimer</a>
+                    </div>
+                    </form>
+            </div>
         </div>
     </div>
 </div>

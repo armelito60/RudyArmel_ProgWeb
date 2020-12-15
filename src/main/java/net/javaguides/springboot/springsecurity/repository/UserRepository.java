@@ -11,6 +11,6 @@ import java.util.List;
 public interface UserRepository extends JpaRepository < User, Long > {
     User findByEmail(String email);
     User findByPseudo(String pseudo);
-    List<User> findAllOrderByPseudoNotNull();
+    List<User> findAllOrderByEmailNotNull();
 
 }

@@ -1,5 +1,6 @@
 package net.javaguides.springboot.springsecurity.service;
 
+import java.security.Principal;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
@@ -43,8 +44,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getAllByPseudo() {
-        return userRepository.findAllOrderByPseudoNotNull();
+    public List<User> getAllByEmail() {
+        return userRepository.findAllOrderByEmailNotNull();
     }
 
     public User save(UserRegistrationDto registration) {
@@ -78,9 +79,9 @@ public class UserServiceImpl implements UserService {
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toList());
     }
-    public List<Event> getEventParticipant(String pseudo) {
-
-        return eventRepository.findAllByParticipantContaining(pseudo);
+    public List<Event> getEventParticipant(String email) {
+        return eventRepository.findAllByParticipantContaining(email);
     }
+
 
 }
