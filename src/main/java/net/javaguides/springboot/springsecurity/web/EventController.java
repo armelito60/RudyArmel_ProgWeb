@@ -21,6 +21,8 @@ public class EventController {
     @Autowired
     private UserService eventService;
 
+    private Principal principal;
+
 
     @GetMapping
     public String stepOneSurvey(Model model) {
@@ -46,14 +48,14 @@ public class EventController {
     }
 
     @PostMapping
-    public String eventCreated(@ModelAttribute("event") @Valid Event event, Principal principal) {
+    public String eventCreated(@ModelAttribute("event") @Valid Event event) {
         event.setCreator(principal.getName());
         eventService.saveUserParticipant(event);
         System.out.println(event.toString());
         return "index";
     }
     @GetMapping
-    public String eventParticipant(Model model, Principal principal) {
+    public String eventParticipant(Model model) {
         List<Event> eventParticipantList = eventService.getEventParticipant(principal.getName());
         List<String> eventList = new ArrayList<>();
 
