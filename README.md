@@ -13,5 +13,10 @@ Ces modifications se font à partir du fichier ressources/template/application.p
 
 ![PROPRIETE](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/Propri%C3%A9t%C3%A9s.PNG?raw=true)
 
+# Utilisateur
+
 La première étape pour un utilisateur est de s'identifier
 
+![IDENTIFIACTION](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/Authentification.PNG?raw=true)
+
+Celui-ci peut aussi choisir de se connecter s'il est déjà authentifié.
