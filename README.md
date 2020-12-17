@@ -22,3 +22,7 @@ La première étape pour un utilisateur est de s'identifier
 Celui-ci peut aussi choisir de se connecter s'il est déjà authentifié.
 
 ![CONNEXION](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/connexion.PNG?raw=true)
+
+La page d'accueil se présente ci-dessous, la supression  de l'évènement n'est pas disponible pour le créateur.
+
+![INDEX](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/Index.PNG?raw=true)
