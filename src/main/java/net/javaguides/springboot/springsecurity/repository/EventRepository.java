@@ -8,5 +8,8 @@ import java.util.List;
 
 @Repository
 public interface EventRepository extends JpaRepository < Event, Long > {
-    List<Event> findAllByParticipantContaining(String email);
+    List<Event> findAllByParticipantContainingOrCreatorEquals(String email, String creator);
+    List<Event> findAllByCreatorEquals(String creator);
+    Event findEventByCreatorEquals(String creator);
+
 }

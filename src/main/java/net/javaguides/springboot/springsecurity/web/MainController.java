@@ -1,5 +1,6 @@
 package net.javaguides.springboot.springsecurity.web;
 
+import javafx.event.EventHandler;
 import net.javaguides.springboot.springsecurity.model.Event;
 import net.javaguides.springboot.springsecurity.model.User;
 import net.javaguides.springboot.springsecurity.service.UserService;
@@ -24,10 +25,14 @@ public class MainController {
     @Autowired
     private UserService userService;
 
+    public EventController eventController = new EventController();
+
     @GetMapping("/")
     public String root(Model model, Principal principal) {
-        List<Event> eventParticipantList = eventService.getEventParticipant(principal.getName());
+        List<Event> eventParticipantList = eventService.getEventParticipant(principal.getName(), principal.getName());
+        List<Event> eventCreatorList = eventService.getEventCreator(principal.getName());
         List<String> eventList = new ArrayList<>();
+        List<String> creatorList = new ArrayList<>();
 
         for (Event event1 : eventParticipantList) {
             eventList.add("Evènement aura lieu le " + event1.getDate() + " à " + event1.getLieu() + " organisé par " + event1.getCreator());
@@ -36,14 +41,26 @@ public class MainController {
         if(eventList.size()==0){
             eventList.add("Pas d'évènements à venir");
             model.addAttribute("eventList", eventList);
-
         }
         else {
             model.addAttribute("eventList", eventList);
         }
 
+        for(Event event2 : eventCreatorList) {
+            creatorList.add("Evènement crée le " + event2.getDate());
+        }
+
+        if(creatorList.size()==0){
+            creatorList.add("Pas d'évènements à venir");
+            model.addAttribute("creatorList", creatorList);
+        }
+        else {
+            model.addAttribute("creatorList", creatorList);
+            eventService.deletedEvent(principal.getName());
+        }
+
         System.out.println(eventList);
-        System.out.println(principal.getName());
+
         return "index";
     }
 

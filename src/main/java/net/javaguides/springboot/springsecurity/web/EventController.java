@@ -21,6 +21,8 @@ public class EventController {
     @Autowired
     private UserService eventService;
 
+    public String creator;
+
     @GetMapping
     public String stepOneSurvey(Model model) {
 
@@ -49,6 +51,9 @@ public class EventController {
         event.setCreator(principal.getName());
         eventService.saveUserParticipant(event);
         System.out.println(event.toString());
+        creator = event.getCreator();
+        System.out.println(event.getCreator());
         return "confirmedEvent";
     }
+
 }
