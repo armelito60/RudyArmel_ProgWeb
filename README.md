@@ -10,11 +10,14 @@ Création d'API pour soumettre un sondage aux différents utilisateurs identifi�
 ![STACK](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/images/Stack1..PNG?raw=true)
 
 # Lancement du projet
-Ces modifications se font à partir du fichier ressources/template/application.properties
+
+1) Utiliser MySQL WorkBench, le logiciel de gestion et d'administration des bases de données MySQL
+
+2) Créer une base de données sur MySQL WorkBench avec un nom, un username et un password conformes à ce qui sera indiqué dans le fichier application.properties (cf. ci-dessous)
 
 ![PROPRIETE](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/images/Propri%C3%A9t%C3%A9s.PNG?raw=true)
 
-SUR UN NAVIGATEUR TAPER L'URL SUIVANTE : http://localhost:8080/login
+3) SUR UN NAVIGATEUR WEB, TAPER L'URL SUIVANTE : http://localhost:8080/login (si bien-sûr vous utilisez le port 8080 sinon remplacez 8080 par le port choisi)
 
 # Différentes étapes du projet
 
@@ -34,4 +37,6 @@ Lors de la création d'évènement, l'utilisateur se trouve sur la page ci-desso
 
 ![EVENT](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/images/%C3%A9v%C3%A8nement.PNG?raw=true)
 
-Le vote des utilisateurs invités à un évènement n'est pas disponible.
+# Remarques
+
+Le vote des utilisateurs invités à un évènement et la suppression d'un sondage ne sont pas disponibles.
