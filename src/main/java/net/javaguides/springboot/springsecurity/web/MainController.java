@@ -56,7 +56,6 @@ public class MainController {
         }
         else {
             model.addAttribute("creatorList", creatorList);
-            eventService.deletedEvent(principal.getName());
         }
 
         System.out.println(eventList);
@@ -77,6 +76,12 @@ public class MainController {
     @GetMapping("/user")
     public String userIndex() {
         return "user/index";
+    }
+
+    @PostMapping
+    public String deletedEvent(@ModelAttribute("event") Event event, Principal principal) {
+        eventService.deletedEvent(event.getCreator());
+        return "deletedEvent";
     }
 
 }

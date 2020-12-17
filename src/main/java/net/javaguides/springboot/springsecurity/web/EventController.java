@@ -24,7 +24,7 @@ public class EventController {
     public String creator;
 
     @GetMapping
-    public String stepOneSurvey(Model model) {
+    public String stepOneSurvey(Model model, Principal principal) {
 
         List<User> userList = eventService.getAllByEmail();
         List<String> emailList = new ArrayList<>();
@@ -32,6 +32,8 @@ public class EventController {
         for (User user: userList) {
             emailList.add(user.getEmail());
         }
+
+        emailList.remove(principal.getName());
 
         Collections.sort(emailList);
         System.out.println(emailList);
