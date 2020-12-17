@@ -6,4 +6,7 @@ Création d'API pour soumettre un sondage aux différents utilisateurs identifi�
 ![ARCHITECTURE](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/Architecture.PNG?raw=true)
 
 # Stack Technique 
+![STACK](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/Stack1..PNG?raw=true)
+
+La première étape pour un utilisateur est de s'indentifier
 
