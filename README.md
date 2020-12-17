@@ -11,11 +11,13 @@ Création d'API pour soumettre un sondage aux différents utilisateurs identifi�
 
 # Lancement du projet
 
-1) Utiliser MySQL WorkBench, le logiciel de gestion et d'administration des bases de données MySQL
+1) Télécharger MySQL WorkBench, le logiciel de gestion et d'administration des bases de données MySQL
 
 2) Créer une base de données sur MySQL WorkBench avec un nom, un username et un password conformes à ce qui sera indiqué dans le fichier application.properties (cf. ci-dessous)
 
 ![PROPRIETE](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/images/Propri%C3%A9t%C3%A9s.PNG?raw=true)
+
+La création des tables s'effectue automatiquement grâce à la dépendance Hibernate.
 
 3) SUR UN NAVIGATEUR WEB, TAPER L'URL SUIVANTE : http://localhost:8080/login (si bien-sûr vous utilisez le port 8080 sinon remplacez 8080 par le port choisi)
 
