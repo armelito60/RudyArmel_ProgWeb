@@ -26,3 +26,7 @@ Celui-ci peut aussi choisir de se connecter s'il est déjà authentifié.
 La page d'accueil se présente ci-dessous, la supression  de l'évènement n'est pas disponible pour le créateur.
 
 ![INDEX](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/Index.PNG?raw=true)
+
+Lors de la création d'évènement, l'utilisateur se trouve sur la page ci-dessous.
+
+![EVENT](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/%C3%A9v%C3%A8nement.PNG?raw=true)
