@@ -1,4 +1,4 @@
-# Projet Doodle Armel - Rudy 4A CFA Classe 41 
+# Projet Doodle TCHIASSO Nono Armel - LOMBARD Rudy 4A CFA Classe 41 
 
 Création d'API pour soumettre un sondage aux différents utilisateurs identifiés sur la base, les clients ont la possibilité de créer un sondage en inviter leurs amis enregistrés, en fonction de la date et d'un lieu.
 
