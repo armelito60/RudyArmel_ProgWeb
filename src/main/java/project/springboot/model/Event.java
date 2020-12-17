@@ -1,4 +1,4 @@
-package net.javaguides.springboot.springsecurity.model;
+package project.springboot.model;
 
 import javax.persistence.*;
 import java.util.Date;

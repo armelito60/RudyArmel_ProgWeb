@@ -3,7 +3,6 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -29,7 +28,7 @@
                 </button>
                 <div id="navbarContent" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+                        <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Déconnexion</a></li>
                     </ul>
                 </div>
             </nav>
@@ -40,36 +39,32 @@
     <div class="row">
         <form th:action="@{/survey}" th:object="${event}" method="post">
             <div class="form-group">
-                <label for="participant" class="control-label">Choisissez un utilisateur</label>
+                <label for="participant" class="control-label">Choisissez vos utilisateurs : </label>
                     <select class="form-control" id="participant" th:field="*{participant}" multiple="multiple">
                         <option th:each="emaillist : ${email}"
                                 th:value="${emaillist}"
-                                th:text="${emaillist}"></option>
+                                th:text="${emaillist}">
+                        </option>
                     </select>
             </div>
-
             <div class="form-group">
-                <label for="date" class="control-label">Choisissez une date !</label>
-
+                <label for="date" class="control-label">Choisissez une date : </label>
                 <input type="date" id="date"
                        value="2020-11-30"
                        min="2020-11-30"
                        max="2021-12-31"
                        th:field="*{date}">
             </div>
-
             <div class="form-group">
-                <label for="lieu" class="control-label">Choisissez un lieu !</label>
+                <label for="lieu" class="control-label">Choisissez un lieu : </label>
                 <input type="text"
                        id="lieu"
                        th:field="*{lieu}">
             </div>
-
             <div class="form-group">
                 <button type="submit" class="btn btn-success" href="/" th:href="@{/confirmedEvent}">Ajouter</button>
             </div>
         </form>
-
     </div>
 </div>
 </body>

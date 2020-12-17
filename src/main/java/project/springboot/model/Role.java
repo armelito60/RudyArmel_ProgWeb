@@ -1,4 +1,4 @@
-package net.javaguides.springboot.springsecurity.model;
+package project.springboot.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,9 +19,7 @@ public class Role {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
 
     public void setId(Long id) {
         this.id = id;

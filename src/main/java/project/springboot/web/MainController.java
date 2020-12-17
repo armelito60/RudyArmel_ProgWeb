@@ -1,11 +1,8 @@
-package net.javaguides.springboot.springsecurity.web;
+package project.springboot.web;
 
-import javafx.event.EventHandler;
-import net.javaguides.springboot.springsecurity.model.Event;
-import net.javaguides.springboot.springsecurity.model.User;
-import net.javaguides.springboot.springsecurity.service.UserService;
+import project.springboot.model.Event;
+import project.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,11 +18,6 @@ public class MainController {
 
     @Autowired
     private UserService eventService;
-
-    @Autowired
-    private UserService userService;
-
-    public EventController eventController = new EventController();
 
     @GetMapping("/")
     public String root(Model model, Principal principal) {
@@ -58,8 +50,6 @@ public class MainController {
             model.addAttribute("creatorList", creatorList);
         }
 
-        System.out.println(eventList);
-
         return "index";
     }
 
@@ -69,7 +59,7 @@ public class MainController {
     }
 
     @GetMapping("/login")
-    public String login(Model model) {
+    public String login() {
         return "login";
     }
 
@@ -79,7 +69,7 @@ public class MainController {
     }
 
     @PostMapping
-    public String deletedEvent(@ModelAttribute("event") Event event, Principal principal) {
+    public String deletedEvent(@ModelAttribute("event") Event event) {
         eventService.deletedEvent(event.getCreator());
         return "deletedEvent";
     }

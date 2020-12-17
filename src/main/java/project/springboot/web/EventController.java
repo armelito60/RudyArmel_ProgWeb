@@ -1,8 +1,8 @@
-package net.javaguides.springboot.springsecurity.web;
+package project.springboot.web;
 
-import net.javaguides.springboot.springsecurity.model.Event;
-import net.javaguides.springboot.springsecurity.model.User;
-import net.javaguides.springboot.springsecurity.service.UserService;
+import project.springboot.model.Event;
+import project.springboot.model.User;
+import project.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +21,6 @@ public class EventController {
     @Autowired
     private UserService eventService;
 
-    public String creator;
-
     @GetMapping
     public String stepOneSurvey(Model model, Principal principal) {
 
@@ -36,10 +34,9 @@ public class EventController {
         emailList.remove(principal.getName());
 
         Collections.sort(emailList);
-        System.out.println(emailList);
-        System.out.println(userList);
 
         model.addAttribute("email", emailList);
+
         return "survey";
     }
 
@@ -52,9 +49,6 @@ public class EventController {
     public String eventCreated(@ModelAttribute("event") @Valid Event event, Principal principal) {
         event.setCreator(principal.getName());
         eventService.saveUserParticipant(event);
-        System.out.println(event.toString());
-        creator = event.getCreator();
-        System.out.println(event.getCreator());
         return "confirmedEvent";
     }
 

@@ -1,4 +1,4 @@
-package net.javaguides.springboot.springsecurity.model;
+package project.springboot.model;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -26,6 +26,7 @@ public class User {
                     name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
+
     private Collection < Role > roles;
 
     public User() {}

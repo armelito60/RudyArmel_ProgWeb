@@ -1,10 +1,10 @@
-package net.javaguides.springboot.springsecurity.service;
+package project.springboot.service;
 
-import net.javaguides.springboot.springsecurity.model.Event;
+import project.springboot.model.Event;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import net.javaguides.springboot.springsecurity.model.User;
-import net.javaguides.springboot.springsecurity.web.dto.UserRegistrationDto;
+import project.springboot.model.User;
+import project.springboot.web.dto.UserRegistrationDto;
 
 import java.util.List;
 
