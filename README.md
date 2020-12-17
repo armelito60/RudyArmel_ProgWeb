@@ -14,7 +14,9 @@ Ces modifications se font à partir du fichier ressources/template/application.p
 
 ![PROPRIETE](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/images/Propri%C3%A9t%C3%A9s.PNG?raw=true)
 
-# Utilisateur
+SUR UN NAVIGATEUR TAPER L'URL SUIVANTE : http://localhost:8080/login
+
+# Différentes étapes du projet
 
 La première étape pour un utilisateur est de s'identifier
 
