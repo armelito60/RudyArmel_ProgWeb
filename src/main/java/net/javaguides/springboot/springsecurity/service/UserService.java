@@ -20,6 +20,10 @@ public interface UserService extends UserDetailsService {
 
     List<User> getAllByEmail();
 
-    List<Event> getEventParticipant(String pseudo);
+    List<Event> getEventParticipant(String email, String creator);
+
+    void deletedEvent(String creator);
+
+    List<Event> getEventCreator(String creator);
 
 }

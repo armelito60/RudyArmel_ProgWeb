@@ -34,10 +34,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
-    }
-
     @Override
     public User findByPseudo(String pseudo) {
         return userRepository.findByPseudo(pseudo);
@@ -46,6 +42,21 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAllByEmail() {
         return userRepository.findAllOrderByEmailNotNull();
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email);
+        if (user == null) {
+            throw new UsernameNotFoundException("Invalid username or password.");
+        }
+        return new org.springframework.security.core.userdetails.User(user.getEmail(),
+                user.getPassword(),
+                mapRolesToAuthorities(user.getRoles()));
+    }
+
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
     public User save(UserRegistrationDto registration) {
@@ -63,24 +74,23 @@ public class UserServiceImpl implements UserService {
         return eventRepository.save(event);
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = userRepository.findByEmail(email);
-        if (user == null) {
-            throw new UsernameNotFoundException("Invalid username or password.");
-        }
-        return new org.springframework.security.core.userdetails.User(user.getEmail(),
-                user.getPassword(),
-                mapRolesToAuthorities(user.getRoles()));
-    }
-
     private Collection < ? extends GrantedAuthority > mapRolesToAuthorities(Collection < Role > roles) {
         return roles.stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toList());
     }
-    public List<Event> getEventParticipant(String email) {
-        return eventRepository.findAllByParticipantContaining(email);
+
+    public List<Event> getEventParticipant(String email, String creator) {
+        return eventRepository.findAllByParticipantContainingOrCreatorEquals(email, creator);
+    }
+
+    public void deletedEvent(String creator) {
+        Event event = eventRepository.findEventByCreatorEquals(creator);
+        eventRepository.delete(event);
+    }
+
+    public List<Event> getEventCreator(String creator) {
+        return eventRepository.findAllByCreatorEquals(creator);
     }
 
 

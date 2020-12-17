@@ -21,8 +21,10 @@ public class EventController {
     @Autowired
     private UserService eventService;
 
+    public String creator;
+
     @GetMapping
-    public String stepOneSurvey(Model model) {
+    public String stepOneSurvey(Model model, Principal principal) {
 
         List<User> userList = eventService.getAllByEmail();
         List<String> emailList = new ArrayList<>();
@@ -30,6 +32,8 @@ public class EventController {
         for (User user: userList) {
             emailList.add(user.getEmail());
         }
+
+        emailList.remove(principal.getName());
 
         Collections.sort(emailList);
         System.out.println(emailList);
@@ -49,6 +53,9 @@ public class EventController {
         event.setCreator(principal.getName());
         eventService.saveUserParticipant(event);
         System.out.println(event.toString());
+        creator = event.getCreator();
+        System.out.println(event.getCreator());
         return "confirmedEvent";
     }
+
 }
