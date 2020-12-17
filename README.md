@@ -20,3 +20,5 @@ La première étape pour un utilisateur est de s'identifier
 ![IDENTIFIACTION](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/Authentification.PNG?raw=true)
 
 Celui-ci peut aussi choisir de se connecter s'il est déjà authentifié.
+
+![CONNEXION](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/connexion.PNG?raw=true)
