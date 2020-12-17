@@ -2,7 +2,7 @@
 
 Création d'API pour soumettre un sondage aux différents utilisateurs identifiés sur la base, les clients ont la possibilité de créer un sondage en inviter leurs amis enregistrés, en fonction de la date et d'un lieu.
 
-# Architecture
+# Architecture Globale
 ![ARCHITECTURE](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/Architecture1.PNG?raw=true)
 
 # Stack Technique 
@@ -30,3 +30,5 @@ La page d'accueil se présente ci-dessous, la supression  de l'évènement n'est
 Lors de la création d'évènement, l'utilisateur se trouve sur la page ci-dessous.
 
 ![EVENT](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/%C3%A9v%C3%A8nement.PNG?raw=true)
+
+Le vote des utilisateurs invités à un évènement n'est pas disponible.
