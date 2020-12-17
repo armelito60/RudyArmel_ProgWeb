@@ -1,6 +1,6 @@
 # Projet Doodle TCHIASSO Nono Armel - LOMBARD Rudy 4A CFA Classe 41 
 
-Création d'API pour soumettre un sondage aux différents utilisateurs identifiés sur la base, les clients ont la possibilité de créer un sondage en inviter leurs amis enregistrés, en fonction de la date et d'un lieu.
+Création d'API pour soumettre un sondage aux différents utilisateurs identifiés sur la base, les clients ont la possibilité de créer un sondage en invitant leurs amis enregistrés, en fonction de la date et d'un lieu.
 
 # Architecture Globale
 ![ARCHITECTURE](https://github.com/armelito60/RudyArmel_ProgWeb/blob/master/Architecture1.PNG?raw=true)
