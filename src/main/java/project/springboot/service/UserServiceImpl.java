@@ -1,15 +1,13 @@
-package net.javaguides.springboot.springsecurity.service;
+package project.springboot.service;
 
-import java.security.Principal;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import net.javaguides.springboot.springsecurity.model.Event;
-import net.javaguides.springboot.springsecurity.repository.EventRepository;
-import net.javaguides.springboot.springsecurity.repository.UserRepository;
+import project.springboot.model.Event;
+import project.springboot.repository.EventRepository;
+import project.springboot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,9 +16,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import net.javaguides.springboot.springsecurity.model.Role;
-import net.javaguides.springboot.springsecurity.model.User;
-import net.javaguides.springboot.springsecurity.web.dto.UserRegistrationDto;
+import project.springboot.model.Role;
+import project.springboot.model.User;
+import project.springboot.web.dto.UserRegistrationDto;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -92,6 +90,4 @@ public class UserServiceImpl implements UserService {
     public List<Event> getEventCreator(String creator) {
         return eventRepository.findAllByCreatorEquals(creator);
     }
-
-
 }

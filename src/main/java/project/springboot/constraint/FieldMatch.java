@@ -1,4 +1,4 @@
-package net.javaguides.springboot.springsecurity.constraint;
+package project.springboot.constraint;
 
 import javax.validation.Payload;
 import javax.validation.Constraint;

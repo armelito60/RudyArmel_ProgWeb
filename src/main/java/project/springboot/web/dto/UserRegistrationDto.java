@@ -1,15 +1,16 @@
-package net.javaguides.springboot.springsecurity.web.dto;
+package project.springboot.web.dto;
 
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
-import net.javaguides.springboot.springsecurity.constraint.FieldMatch;
+import project.springboot.constraint.FieldMatch;
 
 @FieldMatch.List({
         @FieldMatch(first = "password", second = "confirmPassword", message = "The password fields must match"),
         @FieldMatch(first = "email", second = "confirmEmail", message = "The email fields must match")
 })
+
 public class UserRegistrationDto {
 
     @NotEmpty

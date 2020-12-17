@@ -1,4 +1,4 @@
-package net.javaguides.springboot.springsecurity.web;
+package project.springboot.web;
 
 import javax.validation.Valid;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import net.javaguides.springboot.springsecurity.model.User;
-import net.javaguides.springboot.springsecurity.service.UserService;
-import net.javaguides.springboot.springsecurity.web.dto.UserRegistrationDto;
+import project.springboot.model.User;
+import project.springboot.service.UserService;
+import project.springboot.web.dto.UserRegistrationDto;
 
 @Controller
 @RequestMapping("/registration")
